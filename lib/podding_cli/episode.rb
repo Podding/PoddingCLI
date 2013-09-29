@@ -34,7 +34,7 @@ class EpisodeCLI < Thor
     
     filename = File.join( episode_folder, name + ".md")
     if File.exist?( filename )
-      exit unless "y" == ask( "File #{ filename } already exists. Overwrite? (y/n)" )
+      exit unless "y" == ask( "File #{ filename } already exists. Overwrite? (y/n)", :red )
     end
 
     # Actual writing
@@ -47,7 +47,7 @@ class EpisodeCLI < Thor
       episode.puts "---"
     end
 
-    say "Created new episode '#{ name }' with title '#{ title }' at path #{ filename }, opening..."
+    say "Created new episode '#{ name }' with title '#{ title }' at path #{ filename }, opening...", :green
     
     # Open in editor (right now only on OS X, I think)
     system "open #{ filename }"
