@@ -3,21 +3,24 @@
 class EpisodeCLI < Thor
 
   desc "episode new NAME (OPTIONS)", "create new episode with NAME"
-  option :show, :aliases => :s
+  option :show, :aliases => :sh
   option :date, :aliases => :d
   option :title, :aliases => :t
+  option :status, :aliases => :st
+  option :quiet, :aliases => :q, :type => :boolean
 
   def new(name)
+
     unless options[:show]
       show = name.split("-").first
-      say "Assuming you mean show '#{ show }'. (Pass explicitly with --show)"
+      say "Assuming you mean show '#{ show }'. (Pass explicitly with --show)" unless options[:quiet]
     else
       show = options[:show]
     end
     
     unless options[:date]
-      date = Date.today.to_s
-      say "Assuming date '#{ date }'. (Pass explicitly with --date)"  
+      date = (Date.today + 1).to_s
+      say "Assuming date '#{ date }' (tomorrow). (Pass explicitly with --date)" unless options[:quiet]
     else
       date = options[:date]
     end
@@ -44,13 +47,18 @@ class EpisodeCLI < Thor
       episode.puts "show: " + show
       episode.puts "title: \"#{ title }\""
       episode.puts "date: " + date
+      episode.puts "status: " + options[:status] if options[:status]
       episode.puts "---"
+      episode.puts "Shownotes (in Markdown) here."
     end
 
-    say "Created new episode '#{ name }' with title '#{ title }' at path #{ filename }, opening...", :green
+    say "Created new episode '#{ name }' with title '#{ title }'", :green
+    say "Location: #{ filename }"
+    say "Opening with $EDITOR. (Set in .bashrc / .zshrc / .profile)"
+    say "Command will finish once you close the file." 
     
-    # Open in editor (right now only on OS X, I think)
-    system "open #{ filename }"
+    editor_out = system "$EDITOR #{ filename }"
+    say "Done.", :green
   end
 end
 
