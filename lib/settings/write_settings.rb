@@ -8,8 +8,16 @@ def settings_file
   File.join(Dir.home, ".podding")
 end
 
+def settings_to_hash
+
+end
+
 def set_default_namespace(name)
   settings = YAML.load(File.read(settings_file))
   settings["default"] = name
   File.open(settings_file, 'w') { |file| file.write settings.to_yaml }
+end
+
+def namespace_exists?(name)
+  settings_to_hash.keys.include?( name )
 end
