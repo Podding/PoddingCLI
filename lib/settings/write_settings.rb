@@ -12,10 +12,14 @@ def settings_to_hash
   YAML.load(File.read(settings_file))
 end
 
+def hash_to_settings( settings )
+  File.open(settings_file, 'w') { |file| file.write settings.to_yaml }
+end
+
 def set_default_namespace(name)
   settings = settings_to_hash
   settings["default"] = name
-  File.open(settings_file, 'w') { |file| file.write settings.to_yaml }
+  hash_to_settings( settings )
 end
 
 def namespace_exists?(name)
