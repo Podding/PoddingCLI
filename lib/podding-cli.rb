@@ -4,7 +4,7 @@ require 'thor'
 require 'settingslogic'
 
 require_relative 'settings/load_settings'
-require_relative 'settings/write_settings'
+require_relative 'settings/settings_helpers'
 
 # Load subcommands
 require_relative 'commands/episode'
