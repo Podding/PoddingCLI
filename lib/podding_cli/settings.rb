@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 require 'settingslogic'
-require 'pp'
 
 class Settings < Settingslogic
   source File.join(Dir.home, ".podding")
