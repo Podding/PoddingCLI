@@ -20,6 +20,7 @@ def set_default_namespace(name)
   settings = settings_to_hash
   settings["default"] = name
   hash_to_settings( settings )
+  Settings.reload!
 end
 
 def namespace_exists?(name)
