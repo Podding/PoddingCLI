@@ -52,13 +52,14 @@ class EpisodeCLI < Thor
       episode.puts "Shownotes (in Markdown) here."
     end
 
+    # Feedback
     say "Created new episode '#{ name }' with title '#{ title }'", :green
-    say "Location: #{ filename }"
-    say "Opening with $EDITOR. (Set in .bashrc / .zshrc / .profile)"
-    say "Command will finish once you close the file." 
+    say "Location: #{ filename }" unless options[:quiet]
+    say "Opening with $EDITOR. (Set in .bashrc / .zshrc / .profile)" unless options[:quiet]
+    say "Command will finish once you close the file." unless options[:quiet]
     
     editor_out = system "$EDITOR #{ filename }"
-    say "Done.", :green
+    say "Editor closed, I'm done.", :green
   end
 end
 
