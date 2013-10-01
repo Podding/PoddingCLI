@@ -25,3 +25,9 @@ end
 def namespace_exists?(name)
   settings_to_hash.keys.include?( name )
 end
+
+def create_namespace(name, path)
+  settings = settings_to_hash
+  settings[name] = { "podding_root" => path }
+  hash_to_settings(settings)
+end
