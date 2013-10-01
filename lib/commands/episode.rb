@@ -1,8 +1,9 @@
 # encoding: utf-8
 
 class EpisodeCLI < Thor
+  namespace :episode
 
-  desc "episode new NAME (OPTIONS)", "create new episode with NAME"
+  desc "new NAME (OPTIONS)", "create new episode with NAME"
   option :show, :aliases => :sh
   option :date, :aliases => :d
   option :title, :aliases => :t
