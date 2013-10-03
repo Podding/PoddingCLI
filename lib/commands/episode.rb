@@ -26,7 +26,7 @@ class EpisodeCLI < Thor
       date = options[:date]
     end
     
-    unless options[:date]
+    unless options[:title]
       title = name.gsub("-","").upcase  
     else
       title = options[:title]
