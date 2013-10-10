@@ -6,7 +6,7 @@ require 'settingslogic'
 require_relative 'settings/settings_helpers'
 
 require_relative 'commands/project'
-require_relative 'lib/settings/setup'
+require_relative 'lib/preflight/settings'
 require_relative 'lib/settings/load_settings'
 
 # Load subcommands
