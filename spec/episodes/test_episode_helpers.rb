@@ -6,7 +6,7 @@ describe 'sort_meta_with_orde' do
   before do
     @order = { one: 1, two: 2 }
     @known_meta = { two: "foo", one: "bar" }
-    @unknown_meta = { three: "wut" }
+    @unknown_meta = { four: "what", three: "wut" }
     @mixed_meta = @unknown_meta.merge(@known_meta)
   end
 
@@ -19,7 +19,7 @@ describe 'sort_meta_with_orde' do
   end
 
   it 'should sort known meta before unknown, which shouldn\'t be sorted' do
-    sort_meta_with_order(@mixed_meta, @order).must_equal({one: "bar", two: "foo", three: "wut"})
+    sort_meta_with_order(@mixed_meta, @order).must_equal({one: "bar", two: "foo", four: "what", three: "wut"})
   end
 
 end
