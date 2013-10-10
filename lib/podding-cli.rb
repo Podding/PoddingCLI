@@ -6,8 +6,8 @@ require 'settingslogic'
 require_relative 'settings/settings_helpers'
 
 require_relative 'commands/project'
-require_relative 'settings/setup'
-require_relative 'settings/load_settings'
+require_relative 'lib/settings/setup'
+require_relative 'lib/settings/load_settings'
 
 # Load subcommands
 require_relative 'commands/episode'
