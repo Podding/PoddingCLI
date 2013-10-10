@@ -8,6 +8,10 @@ def settings_file
   File.join(Dir.home, ".podding")
 end
 
+def current_project
+  settings_to_hash["default"]
+end
+
 def settings_to_hash
   if File.exists?( settings_file )
     return YAML.load(File.read(settings_file))
