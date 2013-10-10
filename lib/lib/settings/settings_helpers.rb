@@ -30,7 +30,7 @@ def add_key_to_settings( key, value )
   hash_to_settings(settings)
 end
 
-def set_default_namespace(name)
+def set_default_project(name)
   settings = {}
   settings["default"] = name
   settings = settings.merge(settings_to_hash) # makes sure that default ends up on top of the yaml
@@ -38,10 +38,10 @@ def set_default_namespace(name)
   Settings.reload! if defined?( Settings )
 end
 
-def namespace_exists?(name)
+def project_exists?(name)
   settings_to_hash.keys.include?( name )
 end
 
-def create_namespace(name, path)
+def create_project(name, path)
   add_key_to_settings( name, { "podding_root" => path } )
 end

@@ -11,9 +11,9 @@ unless File.exists?( settings_file )
       name = ask( "What would you like to call the project? Use a short, easy-to-type name." )
       path = ask("Where is this project? (I need a path.)")
       path = File.expand_path( path )
-      create_namespace(name, path)
+      create_project(name, path)
       puts settings_to_hash
-      set_default_namespace(name)
+      set_default_project(name)
       say "Great. Set #{ name } as default project.", :green
       say "You can easily add new projects using podding add NAME, and switch between them with podding use NAME."
       say "You can also edit ~/.podding, it's rather straightforward."
