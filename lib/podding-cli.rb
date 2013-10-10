@@ -3,7 +3,7 @@
 require 'thor'
 require 'settingslogic'
 
-require_relative 'settings/settings_helpers'
+require_relative 'lib/settings/settings_helpers'
 
 require_relative 'commands/project'
 require_relative 'lib/preflight/settings'
