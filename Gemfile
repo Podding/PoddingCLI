@@ -5,3 +5,5 @@ gem 'settingslogic'
 
 # CLI building
 gem 'thor'
+
+gem 'faraday'
