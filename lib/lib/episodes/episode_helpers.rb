@@ -10,13 +10,13 @@ HEADER_ORDER = {
 }
 
 def sort_meta_with_order(meta, order)
-  def Symbol.<=>(one, two)
+  sorted = meta.sort do |one, two|
     return order[one] <=> order[two] if order[one] && order[two]
     return -1 if order[one] && order[two] == nil
     return 1 if order[two] && order[one] == nil
     0
   end
-  Hash[meta.sort]
+  Hash[sorted]
 end
 
 def sort_meta(meta)
