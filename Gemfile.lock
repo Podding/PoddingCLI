@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    multipart-post (1.2.0)
     settingslogic (2.0.9)
     thor (0.18.1)
 
@@ -8,5 +11,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday
   settingslogic
   thor
