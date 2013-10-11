@@ -7,3 +7,4 @@ gem 'settingslogic'
 gem 'thor'
 
 gem 'faraday'
+gem 'multi_json'
