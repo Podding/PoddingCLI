@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = PoddingCLI::VERSION
   spec.authors       = ["sirmarcel"]
   spec.email         = ["me@lumenlog.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = "A basic CLI for interacting with podding"
+  spec.summary       = "podding-cli is a CLI for podding"
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_runtime_dependency "thor"
+  spec.add_runtime_dependency "settingslogic"
+  spec.add_runtime_dependency "miniphonic"
 end

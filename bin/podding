@@ -3,4 +3,4 @@
 # TODO: Make this useable in /bin, I don't know how
 require_relative '../lib/podding-cli'
 
-PoddingCLI.start(ARGV)
+PoddingCLI::MainCLI.start(ARGV)
