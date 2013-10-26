@@ -1,18 +1,29 @@
-PoddingCLI
-==========
+# PoddingCLI
 
-a simple CLI to help with managing podding installations
+TODO: Write a gem description
 
-It is very much in development and kind of stupid.
+## Installation
 
-It expects ```~/.podding``` to exist and look like this:
+Add this line to your application's Gemfile:
 
-```
-default_project: "dev"
+    gem 'Podding-cli'
 
-dev:
-  podding_root: "/Absolute/path/to/podding"
+And then execute:
 
-```
+    $ bundle
 
-It would probably be a good idea to use [user_config]( http://rubydoc.info/gems/user_config/0.0.4/frames ).
+Or install it yourself as:
+
+    $ gem install PoddingCLI
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request

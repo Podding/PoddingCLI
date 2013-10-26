@@ -62,6 +62,12 @@ class EpisodeCLI < Thor
     editor_out = system "$EDITOR #{ filename }"
     say "Editor closed, I'm done.", :green
   end
+
+  desc "publish NAME FILE", "ding dong"
+  def publish(name = "foo", path={})
+    production = Auphonic::Production.new("QbZ5ycWHJnkd2j9Bp6k98i", {title: "test"})
+    production.create
+  end
 end
 
 class PoddingCLI < Thor

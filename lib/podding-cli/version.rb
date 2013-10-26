@@ -1,0 +1,3 @@
+module PoddingCLI
+  VERSION = "0.0.1"
+end
